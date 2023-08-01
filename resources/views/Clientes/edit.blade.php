@@ -1,7 +1,7 @@
 @extends('layouts.app')
-@section('titulo', 'Editar Solicitud Cliente')
+@section('titulo', 'Editar Solicitudes de Clientes')
 @php
-    $cabecera = 'Editar Solicitud Cliente ' . $cliente->nombre;
+    $cabecera = 'Editar Solicitudes de Cliente ' . $cliente->nombre;
 @endphp
 @section('cabecera', $cabecera)
 

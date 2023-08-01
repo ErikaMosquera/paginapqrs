@@ -8,16 +8,16 @@ use Illuminate\Http\Request;
 class ServicioController extends Controller
 {
     /**
-     * //Mostrar una lista del recurso.
+     * Mostrar una lista del recurso.
      */
     public function index()
     {
-        $servicios = Servicio::all(); //Se consultan todas las categorias
+        $servicios = Servicio::all(); // Se consultan todas las categorias
         return view('servicios.index', ['servicios' => $servicios]);
     }
 
     /**
-     * Mostrar el formulario para crear un nuevo recurso
+     * Mostrar el formulario para crear un nuevo recurso.
      */
     public function create()
     {
@@ -32,7 +32,6 @@ class ServicioController extends Controller
         Servicio::create($request->all());
         return redirect()->route('servicios.index')->with('info', 'Servicio creado con éxito');
     }
-    
 
     /**
      * Muestra el recurso especificado.
@@ -56,9 +55,7 @@ class ServicioController extends Controller
     public function update(Request $request, Servicio $servicio)
     {
         $servicio->update($request->all());
-        return to_route('servicios.index')->with('info', 'servicio actualizado con éxito');
-        return redirect()->route('servicios.index')->with('info', 'servicio actualizado con éxito');
-    
+        return redirect()->route('servicios.index')->with('info', 'Servicio actualizado con éxito');
     }
 
     /**
@@ -66,11 +63,17 @@ class ServicioController extends Controller
      */
     public function destroy(Servicio $servicio)
     {
-         // Aquí buscamos y eliminamos el servicio de la base de datos según el ID proporcionado en la URL.
-         $servicio->delete();
-         // Redirigimos al usuario de regreso al listado de servicios con un mensaje de éxito.
-         return redirect()->route('servicios.index')->with('info', 'Servicio eliminado con éxito');
+        // Aquí buscamos y eliminamos el servicio de la base de datos según el ID proporcionado en la URL.
+        $servicio->delete();
+        // Redirigimos al usuario de regreso al listado de servicios con un mensaje de éxito.
+        return redirect()->route('servicios.index')->with('info', 'Servicio eliminado con éxito');
     }
+
+//Protegemos las rutas de este controlador con el middleware auth y admin (autenticado y rol de admin)
+public function __construct()
+{
+//Sólo los usuarios autenticados y con rol de admin pueden acceder a todos los métodos de este controlador
+
 }
 
-
+}

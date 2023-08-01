@@ -75,4 +75,10 @@ class ClienteController extends Controller
     return to_route ('clientes.index')->with('info', 'Solicitud eliminada con éxito');
 
     }
+//Protegemos las rutas de este controlador con el middleware auth y admin (autenticado y rol de admin)
+public function __construct()
+{
+
+}
+
 }

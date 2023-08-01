@@ -80,4 +80,12 @@ class RegistroController extends Controller
          // Redirigimos al usuario de regreso al listado de servicios con un mensaje de éxito.
          return redirect()->route('registros.index')->with('info', 'Servicio eliminado con éxito');
     }
+
+    //Protegemos las rutas de este controlador con el middleware auth y admin (autenticado y rol de admin)
+public function __construct()
+{
+//Sólo los usuarios autenticados y con rol de admin pueden acceder a todos los métodos de este controlador
+$this->middleware('auth');
+$this->middleware('admin');
+}
 }

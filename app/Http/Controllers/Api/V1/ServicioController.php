@@ -26,9 +26,10 @@ class ServicioController extends Controller
     $datos = $request->validate([
         'nombre' => ['required', 'string', 'max:100'],
         'descripcion' => ['nullable', 'string', 'max:555'],
+        'solicitud_id' => ['nullable', 'integer',],
         'servicio_id' => ['required', 'integer', 'exists:servicios,id'] 
 
-        //exists valida que el id exista en la tabla categorias
+        //exists valida que el id exista en la tabla servicios
     ]);
     //Crear el Servicio
    $servicio = Servicio::create($datos);
@@ -52,6 +53,7 @@ class ServicioController extends Controller
         $datos = $request->validate([
             'nombre' => ['required', 'string', 'max:100'],
             'descripcion' => ['nullable', 'string', 'max:555'],
+            'solicitud_id' => ['nullable', 'integer', ],
             'servicio_id' => ['required', 'integer', 'exists:servicios,id'] 
         ]);
 

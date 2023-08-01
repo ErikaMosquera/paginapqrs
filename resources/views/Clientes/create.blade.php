@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('titulo', 'Registrar Cliente')
-@section('cabecera', 'Registrar Cliente Servicio')
+@section('cabecera', 'Registrar Cliente a Servicio')
 
 @section('contenido')
 <div class="flex justify-center">
@@ -11,7 +11,7 @@
 
                 <div class="form-control">
                     <label class="label" for="nombre">
-                        <span class="label-text">Nombre</span>
+                        <span class="label-text">Nombre Cliente Solicitante</span>
                     </label>
                     <input type="text" name="nombre" placeholder="Nombre Cliente Solicitante" maxlength="100" class="input input-bordered" required />
                 </div>

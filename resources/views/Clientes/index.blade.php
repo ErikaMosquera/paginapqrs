@@ -1,10 +1,10 @@
 @extends('layouts.app')
-@section('titulo', 'Lista Clientes')
-@section('cabecera', 'Lista de Clientes')
+@section('titulo', 'Crear Solicitud Cliente')
+@section('cabecera', 'Mis Solicitudes')
 
 @section('contenido')
 <div class="flex justify-end m-4">
-    <a href="{{ route('clientes.create') }}" class="btn btn-outline btn-sm">Crear Cliente Solicitante</a>
+    <a href="{{ route('clientes.create') }}" class="btn btn-outline btn-sm">Crear una nueva solicitud</a>
 </div>
 <div class="flex justify-center">
     <div class="overflow-x-auto">

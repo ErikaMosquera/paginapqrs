@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\RegistroController;
 use App\Http\Controllers\ServicioController;
+use App\Http\Controllers\AutenticaController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +17,8 @@ use App\Http\Controllers\ServicioController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::view('/', 'welcome')->name('inicio');
+
+Route::view('/', 'servicios.inicio')->name('inicio');
 
 //Esta línea define una ruta personalizada para mostrar un formulario de registro. 
 //Utiliza el método GET para acceder a la URL /registrarse.
@@ -34,12 +37,13 @@ Route::get('/registros/create', [RegistroController::class, 'create'])->name('re
 Route::post('/registros', [RegistroController::class, 'store'])->name('registro.store');
 Route::get('/registros/{registro}/edit', [RegistroController::class, 'edit'])->name('registros.edit');
 
-//En web.php, crea una nueva ruta para mostrar la lista de usuarios registrados:
+// ruta para mostrar la lista de usuarios registrados:
 Route::get('/usuarios', [RegistroController::class, 'mostrarUsuarios'])->name('usuarios.index');
 Route::post('/registros', [RegistroController::class, 'store'])->name('registros.store');
 Route::delete('/registros/{registro}', [RegistroController::class, 'destroy'])->name('registros.destroy');
 Route::put('/registros/{registro}', [RegistroController::class, 'update'])->name('registros.update');
 
+// ruta para mostrar la lista de clientes registrados:
 
 Route::get('/clientes', [ClienteController::class, 'index'])->name('clientes.index');
 Route::get('/clientes/create', [ClienteController::class, 'create'])->name('clientes.create');
@@ -47,3 +51,17 @@ Route::post('/clientes', [ClienteController::class, 'store'])->name('clientes.st
 
 Route::post('servicio, servicioController@store');
 Route::get('servicio, servicioController@index');
+
+//Ruta de registro de usuarios
+route::view('/registro', 'autenticacion.registro')->name('registro');
+route::post('/registro', [AutenticaController::class, 'registro'])->name('registro.store');
+//Ruta de login de usuarios
+route::view('/login', 'autenticacion.login')->name('login');
+route::post('/login', [AutenticaController::class, 'login'])->name('login.store');
+//Ruta de logout del usuario
+route::post('/logout', [AutenticaController::class, 'logout'])->name('logout');
+//Ruta para editar el perfil de usuario
+Route::get('/perfil', [AutenticaController::class, 'perfil'])->name('perfil');
+Route::put('/perfil/{user}', [AutenticaController::class, 'perfilUpdate'])->name('perfil.update');
+//Ruta para cambiar la contraseña de usuario
+Route::put('/perfil/password/{user}',[AutenticaController::class,'passwordUpdate'])->name('password.update');
