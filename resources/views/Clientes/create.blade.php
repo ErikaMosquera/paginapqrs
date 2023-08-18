@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('titulo', 'Registrar Cliente')
-@section('cabecera', 'Registrar Cliente a Servicio')
+@section('cabecera', 'Registrar Solicitud de Servicio')
 
 @section('contenido')
 <div class="flex justify-center">

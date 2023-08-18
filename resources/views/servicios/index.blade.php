@@ -12,8 +12,7 @@
 <tr>
 <th>Nombre</th>
 <th>Descripción</th>
-<th>Descripción</th>
-<th>solicitud_id</th>
+<th>Codigo Servicio</th>
 <th>Acciones</th>
 </tr>
 </thead>

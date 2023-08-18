@@ -1,5 +1,3 @@
-
-
 @extends('layouts.app')
 @section('titulo', 'Solicitudes FICADES')
 @section('cabecera', 'FICADES - Registra el servicio deseado')

@@ -78,7 +78,7 @@ class ClienteController extends Controller
 //Protegemos las rutas de este controlador con el middleware auth y admin (autenticado y rol de admin)
 public function __construct()
 {
-
+   
 }
 
 }

@@ -73,6 +73,8 @@ class ServicioController extends Controller
 public function __construct()
 {
 //Sólo los usuarios autenticados y con rol de admin pueden acceder a todos los métodos de este controlador
+$this->middleware('auth');
+$this->middleware('admin');
 
 }
 

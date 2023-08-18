@@ -53,7 +53,7 @@ class AutenticaController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->intended('servicios')->with('info', 'Bienvenido, ' . auth()->user()->name);
+            return redirect()->intended('clientes')->with('info', 'Bienvenido, ' . auth()->user()->name);
         }
 
         return back()->withErrors([
