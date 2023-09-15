@@ -4,6 +4,8 @@
 @section('contenido')
 <div class="flex justify-end m-4">
 <a href="{{ route('servicios.create') }}" class="btn btn-outline btn-sm">Crear Servicio</a>
+
+<a href="{{ route('clientes.index') }}" class="btn btn-outline btn-sm">Ver Solicitudes Clientes</a>
 </div>
 <div class="flex justify-center">
 <div class="overflow-x-auto">

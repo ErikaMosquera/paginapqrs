@@ -11,7 +11,7 @@
         <li><a href="{{ route('clientes.index') }}">Zona Clientes</a></li>
         <li><a href="{{ route('servicios.index') }}">Administrador</a></li>
     @if (auth()->user()->rol == 'admin')
-    <li><a href="{{ route('clientes.index') }}">servicios</a></li>
+
     @endif
     </ul>
     {{-- Menú del usuario --}}

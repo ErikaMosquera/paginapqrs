@@ -34,6 +34,7 @@
     <a href="{{ route('servicios.index') }}" class="btn btn-outline btn-primary mt-4">Cancelar</a>
     </div>
     
+    
     </form>
     </div>
     </div>

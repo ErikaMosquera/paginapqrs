@@ -65,3 +65,4 @@ Route::get('/perfil', [AutenticaController::class, 'perfil'])->name('perfil');
 Route::put('/perfil/{user}', [AutenticaController::class, 'perfilUpdate'])->name('perfil.update');
 //Ruta para cambiar la contraseña de usuario
 Route::put('/perfil/password/{user}',[AutenticaController::class,'passwordUpdate'])->name('password.update');
+
