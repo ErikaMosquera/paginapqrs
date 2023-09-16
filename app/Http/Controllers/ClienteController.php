@@ -12,9 +12,10 @@ class ClienteController extends Controller
      */
     public function index()
     {
-        $clientes = Cliente::all(); //Se consultan todos los clientes
+        $clientes = Cliente::all(); // Se consultan todos los clientes
         return view('clientes.index', ['clientes' => $clientes]);
     }
+    
 
     /**
      * Show the form for creating a new resource.
